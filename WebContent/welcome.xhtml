@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+	    <br/><div style="font-size:18px">Leave fields empty to view all hotels</div><br/>
+	    <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Destination"></h:outputText>
+                <h:inputText value="#{searchObject.destination}"></h:inputText>
+                <h:outputText value="Length of Stay (nights)"></h:outputText>
+                <h:inputText value="#{searchObject.lengthOfStay}"></h:inputText>
+                <h:outputText value="Destination ID"></h:outputText>
+                <h:inputText value="#{searchObject.destinationId}"></h:inputText>
+            </h:panelGrid>
+            <h:commandButton value="Search" action="search">
+            	<f:actionListener binding="#{searchObject.setResults()}"/>
+            </h:commandButton>
+        </h:form>
+	</ui:define>
+</ui:composition>
+
+<f:metadata>
+    <f:viewAction action="#{searchObject.clearSearchFields}" />
+</f:metadata>
+
+</html>
