@@ -20,3 +20,4 @@
 #### 1- If fields left empty, all hotel deals should be returned.
 #### 2- Fields get emptied on every page load.
 #### 3- All fields values are treated as "AND". For example if Destination is set to "Miami" and "Length of Stay" is set to 3, this means look for hotels in Miami for a 3-night stay.
+#### 4- Thread safety.
